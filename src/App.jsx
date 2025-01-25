@@ -4,6 +4,7 @@ import Header from './components/Header/Header';
 import Section from './components/Section/Section';
 import Text from './components/Text/Text';
 import TodoList from './components/TodoList/TodoList';
+import Filter from './components/Filter/Filter';
 
 export const App = () => {
   return (
@@ -13,6 +14,7 @@ export const App = () => {
         <Container>
           <Text textAlign="center">Create your first todo😉</Text>
           <Form />
+          <Filter />
           <TodoList />
         </Container>
       </Section>
