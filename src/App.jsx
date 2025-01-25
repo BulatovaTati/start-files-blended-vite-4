@@ -5,15 +5,20 @@ import Section from './components/Section/Section';
 import Text from './components/Text/Text';
 import TodoList from './components/TodoList/TodoList';
 import Filter from './components/Filter/Filter';
+import { useSelector } from 'react-redux';
+import { selectCurrentTodo } from './redux/todoSlice/todoSlice';
+import EditForm from './components/EditForm/EditForm';
 
 export const App = () => {
+  const isEdit = useSelector(selectCurrentTodo);
+
   return (
     <>
       <Header />
       <Section>
         <Container>
           <Text textAlign="center">Create your first todo😉</Text>
-          <Form />
+          {!isEdit ? <Form /> : <EditForm />}
           <Filter />
           <TodoList />
         </Container>
